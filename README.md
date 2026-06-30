@@ -1,6 +1,6 @@
 # Awesome Digital Escape Tools
 
-    [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated directory of privacy tools, secure software, and open-source alternatives.
 > Every link points to [Digital Escape Tools](https://digitalescapetools.com) — an independent, privacy-first discovery platform.
