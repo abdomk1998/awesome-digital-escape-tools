@@ -15,12 +15,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
 
 const SITE_ORIGIN = "https://digitalescapetools.com";
-const TOOL_URL = (id) => `${SITE_ORIGIN}/tools/tool.html?id=${encodeURIComponent(id)}`;
+const TOOL_URL = (id) =>
+  `${SITE_ORIGIN}/tools/tool.html?id=${encodeURIComponent(id)}`;
 
 const LIVE_TOOLS_URL = `${SITE_ORIGIN}/data/tools.json`;
 const LIVE_REPOS_URL = `${SITE_ORIGIN}/repos.json`;
-const LOCAL_TOOLS = path.resolve(REPO_ROOT, "../digitalescapetools_cursor/data/tools.json");
-const LOCAL_REPOS = path.resolve(REPO_ROOT, "../digitalescapetools_cursor/repos.json");
+const LOCAL_TOOLS = path.resolve(
+  REPO_ROOT,
+  "../digitalescapetools_cursor/data/tools.json",
+);
+const LOCAL_REPOS = path.resolve(
+  REPO_ROOT,
+  "../digitalescapetools_cursor/repos.json",
+);
 const README_PATH = path.join(REPO_ROOT, "README.md");
 
 const FETCH_HEADERS = {
@@ -39,8 +46,10 @@ function parseArgs(argv) {
   };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
-    if (a === "--tools" && argv[i + 1]) opts.toolsPath = path.resolve(argv[++i]);
-    else if (a === "--repos" && argv[i + 1]) opts.reposPath = path.resolve(argv[++i]);
+    if (a === "--tools" && argv[i + 1])
+      opts.toolsPath = path.resolve(argv[++i]);
+    else if (a === "--repos" && argv[i + 1])
+      opts.reposPath = path.resolve(argv[++i]);
     else if (a === "--out" && argv[i + 1]) opts.out = path.resolve(argv[++i]);
     else if (a === "--local") opts.local = true;
     else if (a === "--no-fallback") opts.noFallback = true;
@@ -121,7 +130,9 @@ async function loadToolsData(opts) {
       console.error(`[generate-readme] ${e.message}`);
       process.exit(1);
     }
-    console.warn(`[generate-readme] Live fetch failed (${e.message}); using local fallback`);
+    console.warn(
+      `[generate-readme] Live fetch failed (${e.message}); using local fallback`,
+    );
     return loadJsonFile(LOCAL_TOOLS, "tools.json");
   }
 }
@@ -142,10 +153,14 @@ async function loadReposData(opts) {
     return await fetchJson(LIVE_REPOS_URL, "repos.json");
   } catch (e) {
     if (opts.noFallback || !fs.existsSync(LOCAL_REPOS)) {
-      console.warn(`[generate-readme] repos.json unavailable (${e.message}); skipping badges`);
+      console.warn(
+        `[generate-readme] repos.json unavailable (${e.message}); skipping badges`,
+      );
       return null;
     }
-    console.warn(`[generate-readme] repos.json fetch failed; using local fallback`);
+    console.warn(
+      `[generate-readme] repos.json fetch failed; using local fallback`,
+    );
     return loadJsonFile(LOCAL_REPOS, "repos.json");
   }
 }
@@ -167,7 +182,9 @@ function githubAnchor(text) {
 
 function categorySlugFromBackUrl(backUrl) {
   if (!backUrl) return "uncategorized";
-  const cleaned = String(backUrl).replace(/^\.\.\//, "").replace(/\.html$/i, "");
+  const cleaned = String(backUrl)
+    .replace(/^\.\.\//, "")
+    .replace(/\.html$/i, "");
   return cleaned || "uncategorized";
 }
 
@@ -186,7 +203,8 @@ function githubRepoSlug(tool) {
 function formatStars(n) {
   const num = Number(n);
   if (!Number.isFinite(num) || num <= 0) return "";
-  if (num >= 1_000_000) return `⭐ ${(num / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`;
+  if (num >= 1_000_000)
+    return `⭐ ${(num / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`;
   if (num >= 10_000) return `⭐ ${Math.round(num / 1000)}k`;
   if (num >= 1000) return `⭐ ${(num / 1000).toFixed(1).replace(/\.0$/, "")}k`;
   return `⭐ ${num.toLocaleString("en-US")}`;
@@ -238,7 +256,9 @@ function buildToolLine(tool, featuredSet, reposData) {
   const starBadge = repoMeta ? formatStars(repoMeta.stars) : "";
   if (starBadge) badges.push(starBadge);
 
-  const link = featuredSet.has(tool.id) ? `**[${name}](${url})**` : `[${name}](${url})`;
+  const link = featuredSet.has(tool.id)
+    ? `**[${name}](${url})**`
+    : `[${name}](${url})`;
   const tail = [desc, ...badges].filter(Boolean).join(" ");
   return tail ? `- ${link} - ${tail}` : `- ${link}`;
 }
@@ -254,14 +274,25 @@ function buildToc(categories, labels) {
   return lines.join("\n");
 }
 
-function buildReadme({ toolsByCategory, categorySlugs, labels, featuredSet, reposData }) {
+function buildReadme({
+  toolsByCategory,
+  categorySlugs,
+  labels,
+  featuredSet,
+  reposData,
+}) {
   const today = new Date().toISOString().slice(0, 10);
-  const totalTools = Object.values(toolsByCategory).reduce((n, arr) => n + arr.length, 0);
+  const totalTools = Object.values(toolsByCategory).reduce(
+    (n, arr) => n + arr.length,
+    0,
+  );
   const categoryCount = categorySlugs.length;
 
   const parts = [];
 
   parts.push(`# Awesome Digital Escape Tools
+
+    [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated directory of privacy tools, secure software, and open-source alternatives.
 > Every link points to [Digital Escape Tools](${SITE_ORIGIN}) — an independent, privacy-first discovery platform.
@@ -329,7 +360,11 @@ async function main() {
     toolsByCategory[slug].push({ id, ...tool });
   }
 
-  const categorySlugs = sortCategories(Object.keys(toolsByCategory), orderList, labels);
+  const categorySlugs = sortCategories(
+    Object.keys(toolsByCategory),
+    orderList,
+    labels,
+  );
 
   const readme = buildReadme({
     toolsByCategory,
