@@ -1,0 +1,21 @@
+{
+  "_comment": "Editor-curated tool IDs (from site/config/discovery.js). Not stored in tools.json.",
+  "ids": [
+    "protonmail",
+    "torbrowser",
+    "librewolf",
+    "protonvpn70off",
+    "mullvadvpn",
+    "bitwarden",
+    "privateinternetaccess",
+    "privadosecure",
+    "syncthing",
+    "immich",
+    "nextcloud",
+    "peertube",
+    "bravesearch",
+    "session",
+    "entephotos",
+    "standardnotes"
+  ]
+}

@@ -1,0 +1,62 @@
+name: Suggest a tool
+description: Propose a privacy tool for the Digital Escape Tools directory
+title: "[Tool suggestion] "
+labels: ["tool-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping grow the list. **Do not edit `README.md` directly** — it is auto-generated.
+
+        After review, maintainers update the main site's `data/tools.json` and regenerate this repo.
+
+        You can also reach us at [digitalescapetools.com/contact.html](https://digitalescapetools.com/contact.html).
+
+  - type: input
+    id: tool_name
+    attributes:
+      label: Tool name
+      placeholder: e.g. Syncthing
+    validations:
+      required: true
+
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage or source URL
+      placeholder: https://example.com or https://github.com/org/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Suggested category
+      options:
+        - VPN services
+        - Privacy browsers
+        - Secure email
+        - Password managers
+        - Encrypted cloud
+        - Private messaging
+        - File encryption
+        - File sharing & sync
+        - Productivity tools
+        - Developer tools
+        - Other (explain below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should this be listed?
+      description: Privacy benefits, open-source status, who it helps, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: License, alternatives, conflicts of interest, etc.

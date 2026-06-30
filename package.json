@@ -1,0 +1,11 @@
+{
+  "name": "awesome-digital-escape-tools",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Auto-generated awesome list of privacy tools — backlinks to digitalescapetools.com",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-readme.mjs"
+  },
+  "license": "MIT"
+}
