@@ -7,8 +7,7 @@
 [![Privacy First](https://img.shields.io/badge/privacy-first-critical.svg)](https://digitalescapetools.com)
 [![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/abdomk1998/awesome-digital-escape-tools/commits/main)
 
-<img src="https://img.shields.io/liberapay/patrons/DigitalEscapeTools.svg?logo=liberapay">
-
+[![Liberapay patrons](https://img.shields.io/liberapay/patrons/DigitalEscapeTools.svg?logo=liberapay)](https://liberapay.com/DigitalEscapeTools/)
 
 > A curated directory of privacy tools, secure software, and open-source alternatives.
 > Every link points to [Digital Escape Tools](https://digitalescapetools.com) — an independent, privacy-first discovery platform.
