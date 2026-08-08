@@ -4,7 +4,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/abdomk1998/awesome-digital-escape-tools/blob/main/CONTRIBUTING.md)
 [![No Trackers](https://img.shields.io/badge/trackers-none-blue.svg)](https://digitalescapetools.com)
-[![No Ads](https://img.shields.io/badge/ads-none-blue.svg)](https://digitalescapetools.com)
 [![Privacy First](https://img.shields.io/badge/privacy-first-critical.svg)](https://digitalescapetools.com)
 [![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/abdomk1998/awesome-digital-escape-tools/commits/main)
 
