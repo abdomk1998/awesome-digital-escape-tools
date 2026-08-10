@@ -1,6 +1,13 @@
 # Awesome Digital Escape Tools
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/abdomk1998/awesome-digital-escape-tools/blob/main/CONTRIBUTING.md)
+[![No Trackers](https://img.shields.io/badge/trackers-none-blue.svg)](https://digitalescapetools.com)
+[![Privacy First](https://img.shields.io/badge/privacy-first-critical.svg)](https://digitalescapetools.com)
+[![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/abdomk1998/awesome-digital-escape-tools/commits/main)
+
+[![Liberapay patrons](https://img.shields.io/liberapay/patrons/DigitalEscapeTools.svg?logo=liberapay)](https://liberapay.com/DigitalEscapeTools/)
 
 > A curated directory of privacy tools, secure software, and open-source alternatives.
 > Every link points to [Digital Escape Tools](https://digitalescapetools.com) — an independent, privacy-first discovery platform.
