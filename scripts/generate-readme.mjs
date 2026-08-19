@@ -243,12 +243,21 @@ function sortCategories(slugs, orderList, labels) {
   });
 }
 
+/** Best-effort link to the tool's actual source code (GitHub repo or org page). */
+function sourceCodeUrl(tool, repoKey) {
+  if (repoKey) return `https://github.com/${repoKey}`;
+  const gh = String(tool.github ?? "").trim();
+  if (gh) return gh;
+  return "";
+}
+
 function buildToolLine(tool, featuredSet, reposData) {
   const name = tool.name || tool.id;
   const url = TOOL_URL(tool.id);
   const desc = oneLineDescription(tool);
   const repoKey = githubRepoSlug(tool);
   const repoMeta = repoKey && reposData ? reposData[repoKey] : null;
+  const sourceUrl = sourceCodeUrl(tool, repoKey);
 
   const badges = [];
   const licenseBadge = repoMeta ? formatLicense(repoMeta.license) : "";
@@ -259,7 +268,8 @@ function buildToolLine(tool, featuredSet, reposData) {
   const link = featuredSet.has(tool.id)
     ? `**[${name}](${url})**`
     : `[${name}](${url})`;
-  const tail = [desc, ...badges].filter(Boolean).join(" ");
+  const sourceLink = sourceUrl ? `[Source](${sourceUrl})` : "";
+  const tail = [desc, ...badges, sourceLink].filter(Boolean).join(" ");
   return tail ? `- ${link} - ${tail}` : `- ${link}`;
 }
 
