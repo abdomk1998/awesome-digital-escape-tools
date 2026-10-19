@@ -86,6 +86,7 @@
 ## Secure email
 
 - **[Proton Mail](https://digitalescapetools.com/tools/tool.html?id=protonmail)** - Swiss-based, end-to-end encrypted email service with zero-access architecture, open-source clients, and a free tier `GPL-3.0` ⭐ 5.6k [Source](https://github.com/ProtonMail/WebClients)
+- [TempMail10min](https://temp-mail10min.online/) - Free disposable temporary email service with 5, 10, 15, and 30-minute auto-destruct inboxes for fast OTP reception.
 - [BillionMail](https://digitalescapetools.com/tools/tool.html?id=billionmail) - Open-source email server and marketing platform for sending newsletters and campaigns at scale `AGPL-3.0` ⭐ 16k [Source](https://github.com/Billionmail/BillionMail)
 - [Bitmask](https://digitalescapetools.com/tools/tool.html?id=bitmask) - Bitmask is a free and open-source client that enables encrypted email and VPN services through compatible providers `GPL-3.0` ⭐ 65 [Source](https://github.com/leapcode/bitmask-vpn)
 - [Cypht](https://digitalescapetools.com/tools/tool.html?id=cypht) - Open-source modular webmail and unified inbox platform that combines multiple email accounts, news feeds, and messaging protocols into a single privacy-friendly interface `LGPL-2.1` ⭐ 1.8k [Source](https://github.com/cypht-org/cypht)
